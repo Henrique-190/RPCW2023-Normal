@@ -20,7 +20,7 @@ module.exports.list = () => {
 }
 
 module.exports.consult = id => {
-    return cModel.findOne({"ORCID":id})
+    return cModel.findOne({"_id":id})
     .then(dados=>{
         return dados;
     })
@@ -81,7 +81,7 @@ module.exports.insert = contract => {
 }
 
 module.exports.delete = id => {
-    return cModel.deleteOne({"ORCID":id})
+    return cModel.deleteOne({"_id":id})
     .then(dados=>{
         return dados;
     }).catch(erro=>{
