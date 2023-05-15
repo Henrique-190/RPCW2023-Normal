@@ -1,6 +1,32 @@
+Exercício 1
+    Para este exercício, foi necessário criar uma base de dados MongoDB com o nome "scienceJobs" e importar o ficheiro
+fornecido. Para guardar os dados, foi criada uma coleção com o nome "contracts". O comando para importar foi o seguinte:
+        mongoimport -d scienceJobs -c contracts --file emprego-cientifico.json --jsonArray
+
+    
+
 1.2:
-a) db.contracts.countDocuments()
-b) db.contracts.find({"NomeInstituicao": {$regex:"Universidade do Minho"}}).count()
-c) db.contracts.aggregate([ { $group: { _id: "$AreaCNAEF" } }, { $sort: { _id: 1 } } ])
-d) db.contracts.aggregate([{$group:{_id:"$DataInicioContrato", n_contratos: {$sum : 1}}}])
-e) db.contracts.aggregate([{$group:{_id:"$NomeInstituicao", n_contratos: {$sum : 1}}}])
+1. db.contracts.countDocuments()
+2. db.contracts.find({"NomeInstituicao": {$regex:"Universidade do Minho"}}).count()
+3. db.contracts.aggregate([ { $group: { _id: "$AreaCNAEF" } }, { $sort: { _id: 1 } } ])
+4. db.contracts.aggregate([{$group:{_id:"$DataInicioContrato", n_contratos: {$sum : 1}}}])
+5. db.contracts.aggregate([{$group:{_id:"$NomeInstituicao", n_contratos: {$sum : 1}}}])
+
+    Para correr esta aplicação, basta apenas fazer "npm i --save" para instalar as dependências necessárias e 
+depois correr o comando "npm start" para correr a aplicação. A aplicação corre na porta 7777, pelo que para aceder
+basta ir ao browser e escrever "localhost:7777" na barra de endereços. 
+    Visto que não tem nenhum código html, preferi testar a aplicação no postman.
+
+
+Exercício 2.
+    Para correr esta aplicação, basta apenas fazer "npm i --save" para instalar as dependências necessárias e 
+depois correr o comando "npm start" para correr a aplicação. A aplicação corre na porta 15016, pelo que para aceder
+basta ir ao browser e escrever "localhost:15016" na barra de endereços. 
+    A aplicação tem 3 páginas: a página inicial onde estão todos os contratos, a página de cada contrato e a página 
+de cada instituição. Na página inicial é possível verificar que, para cada contrato, existem 2 links, um no campo _id
+e outro no campo do nome da instituição. Na página de cada contrato é possível verificar todos os seus atributos. Já 
+na página de cada instituição é possível verificar todos os contratos dessa instituição. 
+    Para além disso, a aplicação tem um botão que permite voltar à página inicial.
+    O esquema MongoDB está em models/contracts.js; todas as queries à base de dados estão em controllers/contracts.js;
+todas as rotas estão em routes/index.js. O CSS utilizado foi o "w3.css".
+    A aplicação foi testada com o browser.
