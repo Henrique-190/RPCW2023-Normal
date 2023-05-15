@@ -1,14 +1,5 @@
 var cModel = require('../models/contracts');
 
-/*devolve uma lista com todos os contratos;
-devolve o contrato com identificador id;
-devolve a lista dos contratos realizados durante o ano YYYY;
-devolve a lista dos contratos realizados pela instituição contratante AAA;
-devolve a lista dos cursos dos contratados (sem repetições);
-devolve a lista das instituições contratantes (sem repetições);
-acrescenta um contrato novo à BD;
-elimina da BD o contrato com o identificador id.*/
-
 module.exports.list = () => {
     return cModel.find()
     .then(dados=>{

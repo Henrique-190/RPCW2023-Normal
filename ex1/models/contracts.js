@@ -1,9 +1,5 @@
 var mongoose = require('mongoose');
 
-/*
-
-*/
-
 var contractSchema = new mongoose.Schema({
     "NomeInstituicao": String,
     "NIPCInstituicao": Number,
