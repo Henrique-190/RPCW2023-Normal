@@ -1,0 +1,8 @@
+ex1/public/data/emprego-cientifico.json
+ex2/public/data/emprego-cientifico.json
+*/node_modules/**
+*/.git/**
+*/.idea/**
+*/.vscode/**
+*/.vs/**
+*/.nyc_output/**

@@ -1,0 +1,6 @@
+1.2:
+a) db.contracts.countDocuments()
+b) db.contracts.find({"NomeInstituicao": {$regex:"Universidade do Minho"}}).count()
+c) db.contracts.aggregate([ { $group: { _id: "$AreaCNAEF" } }, { $sort: { _id: 1 } } ])
+d) db.contracts.aggregate([{$group:{_id:"$DataInicioContrato", n_contratos: {$sum : 1}}}])
+e) db.contracts.aggregate([{$group:{_id:"$NomeInstituicao", n_contratos: {$sum : 1}}}])
